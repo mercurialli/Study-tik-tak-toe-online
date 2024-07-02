@@ -2,9 +2,9 @@ import Link from "next/link";
 import { ArrowLeftIcon } from "./icons/arrow-left-icon";
 import { StarIcon } from "./icons/star-icon";
 import { UserIcon } from "./icons/user-icon";
-import { HistoryIcon } from "./icons/histry-icon";
+import { HistoryIcon } from "./icons/history-icon";
 
-export function GameTitle({ playersCount }) {
+export function GameTitle({playersCount}) {
   return (
     <div className="pl-2">
       <Link
