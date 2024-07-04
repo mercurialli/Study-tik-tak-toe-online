@@ -19,7 +19,7 @@ export function UiButton({ children, className, size, variant }) {
     {
       primary: "bg-teal-600 hover:bg-teal-500 text-white ",
       outline: "border border-teal-600 text-teal-600 hover:bg-teal-50",
-    }[variant]
+    }[variant],
   );
 
   return <button className={buttonClassName}>{children}</button>;

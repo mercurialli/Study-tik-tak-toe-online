@@ -7,7 +7,7 @@ export function Profile({ className, name, rating, avatar = avatarSrc }) {
     <div
       className={clsx(
         "flex items-center gap-2 text-start text-teal-600",
-        className
+        className,
       )}
     >
       <Image src={avatar} width={48} height={48} alt="avatar" unoptimized />
