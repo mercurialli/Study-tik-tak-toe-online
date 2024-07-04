@@ -15,12 +15,14 @@ export function computeWinner(cells, sequenceSize = 5, fieldSize = 19) {
   function compareElements(indexes) {
     let result = true;
 
-    for (let i = 0; i < indexes.length; i++) {
+    for (let i = 1; i < indexes.length; i++) {
       result &&= !!cells[indexes[i]];
-      result &&= cells[indexes[i]] = cells[indexes[i - 1]];
+      result &&= cells[indexes[i]] === cells[indexes[i - 1]];
     }
+
     return result;
   }
+
   function getSequenceIndexes(i) {
     const res = [
       [], // -
@@ -42,12 +44,14 @@ export function computeWinner(cells, sequenceSize = 5, fieldSize = 19) {
       res.shift();
       res.shift();
     }
+
     return res;
   }
 
   for (let i = 0; i < cells.length; i++) {
     if (cells[i]) {
       const indexRows = getSequenceIndexes(i);
+
       const winnerIndexes = indexRows.find((row) => compareElements(row));
 
       if (winnerIndexes) {
@@ -55,5 +59,6 @@ export function computeWinner(cells, sequenceSize = 5, fieldSize = 19) {
       }
     }
   }
+
   return undefined;
 }
