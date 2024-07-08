@@ -3,11 +3,7 @@ import { UiModal } from "../../uikit/ui-modal";
 
 export function GameOverModal({ winnerName, players }) {
   return (
-    <UiModal
-      width="md"
-      isOpen={winnerName}
-      onClose={() => console.log("Close")}
-    >
+    <UiModal width="md" isOpen={false} onClose={() => console.log("Close")}>
       <UiModal.Header>Игра завершена!</UiModal.Header>
       <UiModal.Body>
         <div className="text-sm">
