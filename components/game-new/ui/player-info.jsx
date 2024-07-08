@@ -19,6 +19,7 @@ export function PlayerInfo({
   const secondsString = String(seconds % 60).padStart(2, "0");
 
   const isDanger = seconds < 10;
+
   const getTimerColor = () => {
     if (timerStartAt) {
       return isDanger ? "text-orange-600" : "text-slate-900";
