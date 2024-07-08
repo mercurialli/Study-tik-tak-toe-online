@@ -2,6 +2,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import { GameSymbol } from "./game-symbol";
 import { useNow } from "../../lib/timers";
+
 export function PlayerInfo({
   isRight,
   avatar,

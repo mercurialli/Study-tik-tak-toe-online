@@ -17,6 +17,7 @@ import { computeWinner } from "./model/compute-winner";
 import { getNextMove } from "./model/get-next-move";
 import { computeWinnerSymbol } from "./model/compute-winner-symbol";
 import { computePlayerTimer } from "./model/compute-player-timer";
+import { useInterval } from "../lib/timers";
 
 const PLAYERS_COUNT = 4;
 
@@ -30,6 +31,13 @@ export function Game() {
     },
     initGameState,
   );
+
+  useInterval(1000, gameState.currentMoveStart, () => {
+    dispatch({
+      type: GAME_STATE_ACTIONS.TICK,
+      now: Date.now(),
+    });
+  });
 
   const winnerSequence = computeWinner(gameState);
   const nextMove = getNextMove(gameState);
